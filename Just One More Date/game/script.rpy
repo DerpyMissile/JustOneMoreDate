@@ -9,18 +9,12 @@ define Pc = Character("[Player]")
 image CLive2D = Live2D("resources/CallieLive2D/MC MODEL PSP.model3.json", default_fade=0.0, loop=True)
 
 label start:
-    # show screen QTE
-    # C "Testing"
-    # N "You're about to test a quick time event."
-    # show QTEv2
-    # N "I have no idea if it worked."
-
     # getting player name
     N "Before we begin, tell me: What is your name?"
     $ Player = renpy.input("Enter your name:", length=32)
-
     call meetup
-
+    
+    call end
 
     return
 
@@ -77,24 +71,34 @@ label meetup:
 
     return
 
-# QTE testing area
-screen QTEv2:
-    timer 2.0 action Jump("too_slow")
+label end:
+    N "The waiter arrives with the check. You should pay."
 
-screen QTE:
-    vbox:
-        textbutton "1" action Jump("yes")
-        textbutton "2" action Jump("no")
-    timer 3.0 action Jump("too_slow")
+    $ counter = 0
+    label repeat:
+    show screen QTE(1, 'after')
+    menu:
+        # you're not supposed to click it so this repeats but the player doesn't realize
+        "Pay for the meal":
+            hide screen QTE
+            jump repeat
 
-label yes:
-    N "Well done."
+    label after:
+        hide screen QTE
+    C "No-no-no! I got this! Just let me just take out my card! It's in my purse... Somewhere…"
+    C "Just give me a bit, I totally got this!"
+
+    N "{i}Callie{/i}. Just. Pay. {b}UP{/b}"
+
+    C "I—but—if I do then the date"
+    C "—it ends!"
+
+    N "That's how it's supposed to be."
+
     return
 
-label no:
-    N "Aw man."
-    return
-
-label too_slow:
-    N "You're too slow. Goodbye now."
-    return
+# timer_length = the amount of seconds you want the QTE to last for
+# missed_event = the label/event to jump to if QTE fails
+screen QTE(timer_length, missed_event):
+    on "show" action SetVariable('counter', timer_length)
+    timer 0.1 action If(counter > 0, true = SetVariable("counter", counter - 0.1), false = Jump(missed_event)) repeat True
