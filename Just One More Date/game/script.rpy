@@ -12,8 +12,11 @@ label start:
     # getting player name
     N "Before we begin, tell me: What is your name?"
     $ Player = renpy.input("Enter your name:", length=32)
-    call meetup
+    show screen ttcard("# Date 1")
     
+    call meetup
+    show screen ttcard("# Part 1 Hobbies")
+    # show screen no
     call end
 
     return
@@ -29,7 +32,7 @@ label meetup:
     N "......"
     N "That's... Odd. Callie should be here by now. The parking lot is empty and it\'s not rush hour. She doesn\'t seem like the kind of person who would stand you up when you were chatting over—"    
 
-    show CLive2D with fade:
+    show CLive2D with moveinright:
         ypos 0.1
     
     C "Ohmygosh! I'm so-so sorry for being late! I just—" 
@@ -75,16 +78,29 @@ label end:
     N "The waiter arrives with the check. You should pay."
 
     $ counter = 0
-    label repeat:
-    show screen QTE(1, 'after')
-    menu:
-        # you're not supposed to click it so this repeats but the player doesn't realize
-        "Pay for the meal":
-            hide screen QTE
-            jump repeat
+    # label repeat:
+    # show screen QTE(1, 'after')
+    # menu:
+    #     # you're not supposed to click it so this repeats but the player doesn't realize
+    #     "Pay for the meal":
+    #         hide screen QTE
+    #         jump repeat
 
+
+# on a side note, another way to do this could be on choice hover callie says no
+    show screen QTE(1.5, 'after')
+    show screen butt_hover
+    label repeat:
+    menu:
+        "Pay for the meal":
+            jump repeat
+            
     label after:
         hide screen QTE
+        hide screen butt_hover
+        # hide screen no
+    pause 0.25
+    hide screen no
     C "No-no-no! I got this! Just let me just take out my card! It's in my purse... Somewhere…"
     C "Just give me a bit, I totally got this!"
 
@@ -95,10 +111,27 @@ label end:
 
     N "That's how it's supposed to be."
 
+    $ renpy.quit()
+
     return
+
+# Custom screens
 
 # timer_length = the amount of seconds you want the QTE to last for
 # missed_event = the label/event to jump to if QTE fails
 screen QTE(timer_length, missed_event):
     on "show" action SetVariable('counter', timer_length)
     timer 0.1 action If(counter > 0, true = SetVariable("counter", counter - 0.1), false = Jump(missed_event)) repeat True
+
+screen no():
+    text "NO!" size 1000:
+        at truecenter
+
+screen butt_hover():
+    mousearea:
+        # area(800, 350, 300, 100) # xpos, ypos, xlength, ylength (based on top left corner)
+        area(350, 350, 1250, 100)
+        hovered Show("no", transition=vpunch)
+
+screen ttcard(current_phase):
+    text current_phase
