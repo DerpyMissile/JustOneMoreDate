@@ -54,6 +54,8 @@ label beginning:
     C "Ohmygosh!{fast} {cps=20}I'm so, so sorry for being late! I just—{nw=1}traffic, you know?{nw=1} Anyways, thanks for waiting! Did you order yet?{w}"
     show CLive2D normal
 
+    N "test test"
+
     menu:
         "No.":
             pass

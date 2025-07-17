@@ -59,11 +59,15 @@ style vscrollbar:
     xsize gui.scrollbar_size
     base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
     thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    ymaximum 800
+    xoffset -30
 
 style slider:
     ysize gui.slider_size
     base_bar Frame("gui/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
     thumb "gui/slider/horizontal_[prefix_]thumb.png"
+    thumb_offset 20
+    left_gutter 15
 
 style vslider:
     xsize gui.slider_size
@@ -134,6 +138,7 @@ style window:
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
+    yoffset -10
 
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
@@ -143,6 +148,8 @@ style namebox:
     xsize gui.namebox_width
     ypos gui.name_ypos
     ysize gui.namebox_height
+    xoffset 100
+    
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
@@ -158,6 +165,8 @@ style say_dialogue:
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
+    xoffset -80
+    yoffset 10
 
     adjust_spacing False
 
@@ -218,7 +227,7 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 405
+    ypos 910
     yanchor 0.5
 
     spacing gui.choice_spacing
@@ -228,6 +237,7 @@ style choice_button is default:
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
+    hover_color "#c67775"
 
 
 ## Quick Menu screen ###########################################################
@@ -240,21 +250,21 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
-    if quick_menu:
+    if quick_menu and not renpy.get_screen('choice'):
 
-        hbox:
+        vbox:
             style_prefix "quick"
 
             xalign 0.5
             yalign 1.0
+            yoffset -34
+            xoffset 645
 
             textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
+            textbutton _("Load") action ShowMenu('load')
             textbutton _("Prefs") action ShowMenu('preferences')
 
 
@@ -273,6 +283,7 @@ style quick_button:
 
 style quick_button_text:
     properties gui.text_properties("quick_button")
+    hover_color "#c67775"
 
 
 ################################################################################
@@ -336,6 +347,7 @@ style navigation_button_text is gui_button_text
 style navigation_button:
     size_group "navigation"
     properties gui.button_properties("navigation_button")
+    xoffset 50
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
@@ -387,10 +399,10 @@ style main_menu_frame:
     background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
+    xmaximum 1200 
     xalign 1.0
-    xoffset -30
-    xmaximum 1200
     yalign 1.0
+    xoffset -30
     yoffset -30
 
 style main_menu_text:
@@ -496,6 +508,8 @@ style game_menu_label_text is gui_label_text
 style return_button is navigation_button
 style return_button_text is navigation_button_text
 
+style game_menu_label_text_selected is empty
+
 style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
@@ -505,11 +519,16 @@ style game_menu_outer_frame:
 style game_menu_navigation_frame:
     xsize 420
     yfill True
+ 
 
 style game_menu_content_frame:
-    left_margin 60
+    xalign 0.5
+    yalign 0.5
+    left_margin -100
     right_margin 30
-    top_margin 15
+    top_margin 20
+    bottom_margin 20
+  
 
 style game_menu_viewport:
     xsize 1380
@@ -517,22 +536,30 @@ style game_menu_viewport:
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable
 
+
 style game_menu_side:
     spacing 15
 
 style game_menu_label:
     xpos 75
     ysize 180
+    yoffset 50
+    xoffset 300
+    
 
 style game_menu_label_text:
     size gui.title_text_size
     color gui.accent_color
     yalign 0.5
 
+
 style return_button:
     xpos gui.navigation_xpos
     yalign 1.0
-    yoffset -45
+    yoffset -150
+
+
+
 
 
 ## About screen ################################################################
@@ -554,6 +581,8 @@ screen about():
         style_prefix "about"
 
         vbox:
+            xoffset 100
+            xsize 1300
 
             label "[config.name!t]"
             text _("Version [config.version!t]\n")
@@ -589,6 +618,7 @@ screen save():
     use file_slots(_("Save"))
 
 
+
 screen load():
 
     tag menu
@@ -614,6 +644,7 @@ screen file_slots(title):
 
                 key_events True
                 xalign 0.5
+                yoffset -20
                 action page_name_value.Toggle()
 
                 input:
@@ -626,6 +657,7 @@ screen file_slots(title):
 
                 xalign 0.5
                 yalign 0.5
+                yoffset -30
 
                 spacing gui.slot_spacing
 
@@ -711,12 +743,17 @@ style page_button:
 
 style page_button_text:
     properties gui.text_properties("page_button")
+    hover_color "#c67775"
+    selected_color "#f4bab9"
 
 style slot_button:
     properties gui.button_properties("slot_button")
 
 style slot_button_text:
     properties gui.text_properties("slot_button")
+    hover_color "#c67775"
+
+
 
 
 ## Preferences screen ##########################################################
@@ -841,7 +878,9 @@ style pref_label_text:
     yalign 1.0
 
 style pref_vbox:
-    xsize 338
+    xsize 420
+    xoffset 150
+    
 
 style radio_vbox:
     spacing gui.pref_button_spacing
@@ -852,6 +891,8 @@ style radio_button:
 
 style radio_button_text:
     properties gui.text_properties("radio_button")
+    selected_color "#c67775"
+    hover_color "#f4bab9"
 
 style check_vbox:
     spacing gui.pref_button_spacing
@@ -862,9 +903,12 @@ style check_button:
 
 style check_button_text:
     properties gui.text_properties("check_button")
+    selected_color "#c67775"
+    hover_color "#f4bab9"
 
 style slider_slider:
-    xsize 525
+    xsize 540
+    
 
 style slider_button:
     properties gui.button_properties("slider_button")
@@ -876,6 +920,7 @@ style slider_button_text:
 
 style slider_vbox:
     xsize 675
+    xoffset 150
 
 
 ## History screen ##############################################################
@@ -986,6 +1031,7 @@ screen help():
 
         vbox:
             spacing 23
+            xoffset 100
 
             hbox:
 
@@ -1118,6 +1164,8 @@ style help_button:
 
 style help_button_text:
     properties gui.text_properties("help_button")
+    selected_color "#c67775"
+    hover_color "#f4bab9"
 
 style help_label:
     xsize 375
@@ -1583,12 +1631,14 @@ style scrollbar:
     ysize gui.scrollbar_size
     base_bar Frame("gui/phone/scrollbar/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
     thumb Frame("gui/phone/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    
 
 style vscrollbar:
     variant "small"
     xsize gui.scrollbar_size
     base_bar Frame("gui/phone/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
     thumb Frame("gui/phone/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+
 
 style slider:
     variant "small"
