@@ -36,7 +36,7 @@ label start:
 # nervous, normal, normal_talking
 label beginning:
     scene mccafebg:
-        "resources/mccafebg.png"
+        "resources/cafe-bg.png"
         zoom 0.75
         ypos -0.05
     with fade
