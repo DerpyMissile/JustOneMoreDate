@@ -1,0 +1,228 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "EyeL Open"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "",
+			"Name": "EyeL Smile"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "",
+			"Name": "EyeR Open"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "Eye Anger"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "sway"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "Eye Small"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "Remove Shine"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "",
+			"Name": "EyeR Smile"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "",
+			"Name": "Eyeball X Left "
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "",
+			"Name": "Eyeball Y Left"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "eyebrow(anger)"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "",
+			"Name": "Talking"
+		},
+		{
+			"Id": "ParamCheek",
+			"GroupId": "",
+			"Name": "Large Smile"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "Fear mouth"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "",
+			"Name": "Body X"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "Head Tilt"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "",
+			"Name": "Body Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "",
+			"Name": "Body Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "Breath"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "",
+			"Name": "Up Down Hair Sway"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "",
+			"Name": "Left Right Hair Sway"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "Head and Bow bounce"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part27",
+			"Name": "MC MODEL PSP Corrected.psd (Corresponding layer not found)"
+		},
+		{
+			"Id": "Part",
+			"Name": "C FINAL"
+		},
+		{
+			"Id": "Part14",
+			"Name": "C FINAL"
+		},
+		{
+			"Id": "BANGS",
+			"Name": "BANGS"
+		},
+		{
+			"Id": "Part4",
+			"Name": "HAIR TOP"
+		},
+		{
+			"Id": "headphones",
+			"Name": "headphones"
+		},
+		{
+			"Id": "head",
+			"Name": "head"
+		},
+		{
+			"Id": "Part10",
+			"Name": "HAIR LAYER 2"
+		},
+		{
+			"Id": "body",
+			"Name": "body"
+		},
+		{
+			"Id": "Part12",
+			"Name": "HAIR BACK"
+		},
+		{
+			"Id": "Part13",
+			"Name": "Hair bow"
+		},
+		{
+			"Id": "head2",
+			"Name": "head"
+		},
+		{
+			"Id": "Part2",
+			"Name": "Bang Right"
+		},
+		{
+			"Id": "Part3",
+			"Name": "Bang Left"
+		},
+		{
+			"Id": "LEFT",
+			"Name": "LEFT"
+		},
+		{
+			"Id": "RIGHT",
+			"Name": "RIGHT"
+		},
+		{
+			"Id": "Part5",
+			"Name": "MOUTH Copy"
+		},
+		{
+			"Id": "Part9",
+			"Name": "eyes left"
+		},
+		{
+			"Id": "CHEST",
+			"Name": "CHEST"
+		},
+		{
+			"Id": "Part11",
+			"Name": "Mid Section"
+		},
+		{
+			"Id": "Sholders",
+			"Name": "Sholders"
+		},
+		{
+			"Id": "Part18",
+			"Name": "MOUTH Copy"
+		},
+		{
+			"Id": "Part6",
+			"Name": "TOP Copy"
+		},
+		{
+			"Id": "Part7",
+			"Name": "BOTTOM Copy"
+		},
+		{
+			"Id": "Part8",
+			"Name": "INSIDE Copy"
+		},
+		{
+			"Id": "Part19",
+			"Name": "TOP Copy"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamEyeBallX",
+			"ParamEyeBallY"
+		]
+	]
+}

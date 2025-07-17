@@ -1,42 +1,58 @@
 ﻿define C = Character("Callie", color = "#893727") # what color for Callie's name?
 define N = Character("Narrator") # what color for narrator's name?
 define Pc = Character("[Player]") # what color for player's name?
-image CLive2D = Live2D("resources/CallieLive2D/MC MODEL PSP.model3.json", default_fade=0.0, loop=True)
+# image CLive2D = Live2D("resources/CallieLive2D/MC MODEL PSP.model3.json", default_fade=0.0, loop=True)
+image CLive2D = Live2D("resources/Callie", default_fade=0.0, loop=True)
 
 init:
     $ counter = 0
     $ genre = ""
     $ food = ""
 
+""" Example of live2d animation
+C "Ohmygosh!{nw=2}" 
+# Callie_nervous
+show CLive2D nervous
+C "Ohmygosh! {fast}I'm so, so sorry for being late!{nw=2}"
+show CLive2D normal
+C "Ohmygosh! I'm so, so sorry for being late!{fast} I just—{nw=2}"
+show CLive2D normal_talking
+C "—traffic, you know?"
+"""
+
+""" Example2 of live2d animation
+show CLive2D normal nervous normal_talking
+C "Ohmygosh! I'm so, so sorry for being late! I just—traffic, you know?"
+"""
+
 label start:
     # getting player name
     N "What is your name?"
     $ Player = renpy.input("Enter your name:", length=32)   
-    call start
+    call beginning
     call end
 
     return
-
-label start:
+# nervous, normal, normal_talking
+label beginning:
     scene mccafebg:
         "resources/mccafebg.png"
         zoom 0.75
         ypos -0.05
     with fade
 
-    N "..."
-    N "......"
-    N "That's... odd. Callie should be here by now. It's not rush hour, and while you were texting, she didn't seem like the kind of person who'd stand you—"
+    N "...{w}..."
+    N "That's... odd. Callie should be here by now. It's not rush hour, and while you were texting, she didn't seem like the kind of person who'd stand {a=https://www.youtube.com/watch?v=dQw4w9WgXcQ}you{/a}—"
     # During this textbox have the camera zoom from side to side implying the PC is looking around.
 
-    show CLive2D with moveinright:
+    show CLive2D normal with moveinright:
         ypos 0.1
     
-    C "Ohmygosh! I'm so, so sorry for being late! I just—" 
-    # Callie_nervous
-    C "—traffic, you know?"
-    # (insert animation here) [she chuckles nervously]
-    C "Anyways, thanks for waiting! Did you order yet?"
+    show CLive2D nervous
+    C "Ohmygosh!"
+    show CLive2D normal_talking
+    C "Ohmygosh!{fast} {cps=20}I'm so, so sorry for being late! I just—{nw=1}traffic, you know?{nw=1} Anyways, thanks for waiting! Did you order yet?{w}"
+    show CLive2D normal
 
     menu:
         "No.":
@@ -48,6 +64,7 @@ label start:
 
     # Callie_too_Sweet
     C "Oh, really? If that's the case, why don't I cover the meal then? On the house! As an apology for being late!"
+    show CLive2D normal
 
     menu:
         "Sure.":
@@ -59,16 +76,20 @@ label start:
             pass
 
     C "No! I insist! Waiter! Yoohoo! Menu, please!"
+    show CLive2D normal
 
     label c1:
 
     N "You peruse the menu and all its overly decadent offerings. This sweets cafe sure is on the pricey side. $38 for a slice of cake?! Ridiculous! Who in their right mind would order from here?!"
 
+
     C "I'll have the Poppin' Pomegranate Parfait! And—oh, wait. [Player], why don't you order first? It's on my card!"
+    show CLive2D normal
 
     menu:
         "Any recommendations?":
             C "Their Four Seasons Lotus Bowl makes it so worth the visit! I always stay for more."
+            show CLive2D normal
             menu:
                 "Ambrosial Delight":
                     $ food = "Ambrosial Delight"
@@ -87,6 +108,7 @@ label start:
     
     # Callie_nervous
     C "Hobbies? I like to play video games in my free time. How about you? What do you play?"
+    show CLive2D normal # nervous would be too nervous here tho...
 
     menu:
         "Action":
@@ -130,11 +152,11 @@ label start:
     N "Callie pulls the bag of materials from her purse."
 
     # Callie_sardonic
-    C "I've knitted for ages, but I keep having to undo my stitches because I've got a pet—"
+    C "I've knitted for ages, but I keep having to undo my stitches because I've got a pet—{w}"
     # Callie_hiding_frustration
-    C "who keeps interrupting—"
+    C "I've knitted for ages, but I keep having to undo my stitches because I've got a pet—{fast}who keeps interrupting—{w}"
     # Callie_BOMBASTIC_side-eye
-    C "—me when I'm so close to finishing."
+    C "I've knitted for ages, but I keep having to undo my stitches because I've got a pet—who keeps interrupting—{fast}—me when I'm so close to finishing."
 
     # DURING THIS TEXT BOX PLAY: Callie_surprised > Callie_nervous > Callie_too_sweet
     N "She seems to be having a rough patch. Let's get this date back on track. Why don't you ask her something? Like, say, what's her favorite thing to knit?"
@@ -239,7 +261,7 @@ label end:
     # Callie_too_sweet
     C "No-no-no! I'll pay for the date! Just let me order more first—!"
     
-    N "{i}Callie{/i}. Just. Pay. {b}UP{/b}"
+    N "{i}Callie{/i}.{w} Just.{w} Pay.{w} {b}UP{/b}"
 
     # Callie_angry
     C "No! Damn it! Why do you always have to ruin things! This is why the devs abandoned us and why no one likes our game! Because {i}you{/i} keep enforcing this stupid, generic plot!"
@@ -252,14 +274,15 @@ label end:
     N "For sure not {i}you{/i}"
 
     # Callie_angry_eye_twitch
-    C "You are {i}sooo{/i}, lucky you're just some dumb! Unessential! Exposition-dumping voice! Because if you were a character, I'd strangle you to death!"
+    C "You are {size=+10}{i}sooo{/i}{/size}, lucky you're just some dumb! Unessential! Exposition-dumping voice! Because if you were a character, I'd strangle you to death!"
 
     N "And you're lucky you're the only character here because I'd replace you in a tick!"
 
     # Callie_eye_roll
     C "Replace me? The devs are better off replacing you!"
 
-    N "You {b}motherf—{/b}{nw}!"
+    # N "{cps=20}You {b}motherf—{/b}{nw}{/cps}"
+    N "{cps=20}Y{size=+1}o{/size}{size=+2}u{/size}{size=+3} {/size}{size=+5}m{/size}{size=+7}o{/size}{size=+10}t{/size}{size=+14}h{/size}{size=+18}e{/size}{size=+23}r{/size}{size=+29}f{/size}{size=+37}—{/size}{/cps}{nw}"
     
     $ renpy.quit()
 
@@ -285,3 +308,6 @@ screen butt_hover(popup, trans):
 
 # screen ttcard(current_phase):
 #     text current_phase
+
+# how peeps want to be credited
+# Sub -> creative lead, model
