@@ -42,17 +42,18 @@ label beginning:
     with fade
 
     N "...{w}..."
-    N "That's... odd. Callie should be here by now. It's not rush hour, and while you were texting, she didn't seem like the kind of person who'd stand {a=https://www.youtube.com/watch?v=dQw4w9WgXcQ}you{/a}—"
+    N "That's... odd. Callie should be here by now. It's not rush hour, and while you were texting, she didn't seem like the kind of person who'd stand you up—"
     # During this textbox have the camera zoom from side to side implying the PC is looking around.
 
     show CLive2D normal with moveinright:
         ypos 0.1
     
-    show CLive2D nervous
-    C "Ohmygosh!"
+
     show CLive2D normal_talking
-    C "Ohmygosh!{fast} {cps=20}I'm so, so sorry for being late! I just—{nw=1}traffic, you know?{nw=1} Anyways, thanks for waiting! Did you order yet?{w}"
-    show CLive2D normal
+    C "Ohmygosh!"
+    C "Ohmygosh!{fast} {cps=20}I'm so, so sorry for being late! I just—{nw=1}"
+    show CLive2D nervous normal_talking
+    C "{cps=20}—traffic, you know? Anyways, thanks for waiting! Did you order yet?{w}"
 
     menu:
         "No.":

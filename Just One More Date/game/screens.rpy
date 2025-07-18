@@ -103,14 +103,16 @@ screen say(who, what):
 
     window:
         id "window"
-
+        # at transform:
+        #     alpha 0.75
         if who is not None:
 
             window:
                 id "namebox"
                 style "namebox"
                 text who id "who"
-
+                # at transform:
+                #     alpha 0.75
         text what id "what"
 
 
