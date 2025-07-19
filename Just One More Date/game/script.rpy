@@ -59,9 +59,9 @@ label beginning:
     show CLive2D normal_talking
     $ quick_menu = True
     C "Ohmygosh!{w}{cps=20} I'm {i}so{/i}, so sorry for being late! I just—{nw=1}"
-    show CLive2D nervous_talking nervous_normal normal
-    C "{cps=20}—traffic, you know? Anyways, thanks for waiting! Did you order yet?{w}"
-
+    show CLive2D nervous_talking nervous_normal normal_talking
+    C "{cps=20}—traffic, you know? {w=1.5} Anyways, thanks for waiting! Did you order yet?{w}"
+    show CLive2D normal
     $ quick_menu = False
     menu:
         "No.":
@@ -171,10 +171,10 @@ label beginning:
 
     # show CLive2D Callie_sardonic
     C "I've knitted for ages, but I keep having to undo my stitches because I've got a {i}pet{/i}—"
-    show CLive2D hiding_frustration_talking
+    show CLive2D hiding_frustration_start hiding_frustration_talking
     extend "who keeps interrupting"
-    show CLive2D normal_bombastic_side_eye
-    extend " me when I'm so close to finishing."
+    show CLive2D hiding_frustration_normal normal_bombastic_side_eye normal_talking
+    extend "{w=2} me {w=2}when I'm so close to finishing."
     show CLive2D normal
 
     # DURING THIS TEXT BOX PLAY: Callie_surprised > Callie_nervous > Callie_too_sweet
@@ -316,8 +316,10 @@ label end:
     # show CLive2D Callie_eye_roll
     C "Replace me? The devs are better off replacing {i}you{/i}!"
 
+    # $ sshake = Shake((0, 0, 0, 0), 1.0, dist=15)
+
     # N "{cps=20}You {b}motherf—{/b}{nw}{/cps}"
-    N "{cps=20}Y{size=+1}o{/size}{size=+2}u{/size}{size=+3} {/size}{size=+5}m{/size}{size=+7}o{/size}{size=+10}t{/size}{size=+14}h{/size}{size=+18}e{/size}{size=+23}r{/size}{size=+29}f{/size}{size=+37}—{/size}{/cps}{nw}" # with vpunch
+    N "{cps=20}Y{size=+1}o{/size}{size=+2}u{/size}{size=+3} {/size}{size=+5}m{/size}{size=+7}o{/size}{size=+10}t{/size}{size=+14}h{/size}{size=+18}e{/size}{size=+23}r{/size}{size=+29}f{/size}{size=+37}—{/size}{/cps}{nw}" with Move((15, 0), (-15, 0), 0.3, bounce=True, repeat=True, delay=1)
     hide CLive2D
 
     # error phase    
