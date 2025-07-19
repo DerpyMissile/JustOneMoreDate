@@ -1043,7 +1043,19 @@ screen extras():
         vbox:
             xoffset 100
             xsize 1300
-            text _("Weeeee")
+
+            # input each extra here
+            text _("By Kraeyola. Callie's first iteration of concepts:")
+            image ("resources/Callie_concepts1.png")
+
+            text _("By Kraeyola. Callie's second iteration of concepts:")
+            image ("resources/Callie_concepts2.png"):
+                zoom 0.35
+
+            text _("By Kraeyola. Callie's reference sheet:")
+            image ("resources/Callie_ref_sheet.png"):
+                zoom 0.13
+            
 
 style extras_label is gui_label
 style extras_label_text is gui_label_text

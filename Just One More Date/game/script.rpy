@@ -75,7 +75,6 @@ label beginning:
     # show CLive2D Callie_too_Sweet
     C "Oh, really? If that's the case, why don't I cover the meal then? On the house! As an apology for being late!"
 
-    $ quick_menu = False
     menu:
         "Sure.":
             C "Great! Waiter! Yoohoo! Menu please!"
