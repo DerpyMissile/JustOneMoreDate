@@ -12,11 +12,6 @@
 			"Name": "EyeL Smile"
 		},
 		{
-			"Id": "ParamEyeROpen",
-			"GroupId": "",
-			"Name": "EyeR Open"
-		},
-		{
 			"Id": "Param5",
 			"GroupId": "",
 			"Name": "Eye Anger"
@@ -37,14 +32,14 @@
 			"Name": "Remove Shine"
 		},
 		{
-			"Id": "ParamEyeRSmile",
+			"Id": "Param10",
 			"GroupId": "",
-			"Name": "EyeR Smile"
+			"Name": "Pupals"
 		},
 		{
 			"Id": "ParamEyeBallX",
 			"GroupId": "",
-			"Name": "Eyeball X Left "
+			"Name": "Eyeball X Left"
 		},
 		{
 			"Id": "ParamEyeBallY",
@@ -67,9 +62,19 @@
 			"Name": "Large Smile"
 		},
 		{
+			"Id": "ParamCheek2",
+			"GroupId": "",
+			"Name": "Large Smile Akward"
+		},
+		{
 			"Id": "ParamMouthOpenY",
 			"GroupId": "",
 			"Name": "Fear mouth"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "True Smile"
 		},
 		{
 			"Id": "ParamBodyAngleX",
@@ -110,6 +115,11 @@
 			"Id": "Param7",
 			"GroupId": "",
 			"Name": "Head and Bow bounce"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "Dead Inside"
 		}
 	],
 	"ParameterGroups": [],
@@ -223,6 +233,10 @@
 		[
 			"ParamEyeBallX",
 			"ParamEyeBallY"
+		],
+		[
+			"ParamHairFront",
+			"ParamHairSide"
 		]
 	]
 }

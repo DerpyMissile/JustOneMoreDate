@@ -335,6 +335,10 @@ screen navigation():
 
         textbutton _("About") action ShowMenu("about")
 
+# added in here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        if persistent.crashed:
+            textbutton _("Extras") action ShowMenu("extras")
+
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
@@ -1018,6 +1022,35 @@ style history_label:
 style history_label_text:
     xalign 0.5
 
+## Extras screen ################################################################
+##
+## This screen gives credit and copyright information about the game and Ren'Py.
+##
+## There's nothing special about this screen, and hence it also serves as an
+## example of how to make a custom screen.
+
+screen extras():
+
+    tag menu
+
+    ## This use statement includes the game_menu screen inside this one. The
+    ## vbox child is then included inside the viewport inside the game_menu
+    ## screen.
+    use game_menu(_("Extras"), scroll="viewport"):
+
+        style_prefix "extras"
+
+        vbox:
+            xoffset 100
+            xsize 1300
+            text _("Weeeee")
+
+style extras_label is gui_label
+style extras_label_text is gui_label_text
+style extras_text is gui_text
+
+style extras_label_text:
+    size gui.label_text_size
 
 ## Help screen #################################################################
 ##
