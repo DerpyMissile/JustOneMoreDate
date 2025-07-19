@@ -53,17 +53,6 @@
 		},
 		{
 			"Target": "Parameter",
-			"Id": "ParamEyeROpen",
-			"Segments": [
-				0,
-				0,
-				0,
-				2.667,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
 			"Id": "Param5",
 			"Segments": [
 				0,
@@ -96,17 +85,6 @@
 				0.089,
 				0,
 				0.133,
-				0,
-				0,
-				2.667,
-				0
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "ParamEyeRSmile",
-			"Segments": [
-				0,
 				0,
 				0,
 				2.667,
@@ -578,6 +556,28 @@
 				0,
 				2.667,
 				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Ahhh",
+			"Segments": [
+				0,
+				1,
+				0,
+				2.667,
+				1
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param11",
+			"Segments": [
+				0,
+				1,
+				0,
+				2.667,
+				1
 			]
 		}
 	]

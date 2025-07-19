@@ -52,6 +52,11 @@
 			"Name": "eyebrow(anger)"
 		},
 		{
+			"Id": "ebup",
+			"GroupId": "",
+			"Name": "Eyebrow up"
+		},
+		{
 			"Id": "ParamMouthForm",
 			"GroupId": "",
 			"Name": "Talking"
@@ -75,6 +80,11 @@
 			"Id": "Param9",
 			"GroupId": "",
 			"Name": "True Smile"
+		},
+		{
+			"Id": "Anny",
+			"GroupId": "",
+			"Name": "Annoyed Smile"
 		},
 		{
 			"Id": "ParamBodyAngleX",
@@ -120,6 +130,31 @@
 			"Id": "Param8",
 			"GroupId": "",
 			"Name": "Dead Inside"
+		},
+		{
+			"Id": "anger",
+			"GroupId": "",
+			"Name": "Anger"
+		},
+		{
+			"Id": "anger2",
+			"GroupId": "",
+			"Name": "Anger move"
+		},
+		{
+			"Id": "Ahhh",
+			"GroupId": "",
+			"Name": "Sweat"
+		},
+		{
+			"Id": "Param11",
+			"GroupId": "",
+			"Name": "Darkness"
+		},
+		{
+			"Id": "Lines",
+			"GroupId": "",
+			"Name": "Lines"
 		}
 	],
 	"ParameterGroups": [],

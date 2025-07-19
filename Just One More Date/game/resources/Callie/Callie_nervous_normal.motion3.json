@@ -6,8 +6,8 @@
 		"Loop": true,
 		"AreBeziersRestricted": true,
 		"CurveCount": 12,
-		"TotalSegmentCount": 17,
-		"TotalPointCount": 49,
+		"TotalSegmentCount": 19,
+		"TotalPointCount": 55,
 		"UserDataCount": 0,
 		"TotalUserDataSize": 0
 	},
@@ -21,17 +21,6 @@
 				0,
 				1.333,
 				1
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "ParamEyeROpen",
-			"Segments": [
-				0,
-				0,
-				0,
-				1.333,
-				0
 			]
 		},
 		{
@@ -83,17 +72,6 @@
 				0,
 				1.333,
 				1
-			]
-		},
-		{
-			"Target": "Parameter",
-			"Id": "ParamEyeRSmile",
-			"Segments": [
-				0,
-				0,
-				0,
-				1.333,
-				0
 			]
 		},
 		{
@@ -194,6 +172,42 @@
 				0.444,
 				0,
 				0.889,
+				0,
+				1.333,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Ahhh",
+			"Segments": [
+				0,
+				1,
+				1,
+				0.056,
+				1,
+				0.111,
+				0,
+				0.167,
+				0,
+				0,
+				1.333,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param11",
+			"Segments": [
+				0,
+				1,
+				1,
+				0.111,
+				1,
+				0.222,
+				0,
+				0.333,
+				0,
 				0,
 				1.333,
 				0
