@@ -158,18 +158,21 @@ label beginning:
     Pc "What do you like about [genre.lower()] games?"
 
     # show CLive2D Callie_nervous
+    show CLive2D nervous_start nervous_talking
     C "Oh…! I really like the—um—I'm sorry! I don't actually like [genre.lower()] games! I just didn't know what else to say! I didn't leave a good impression since I was late, but you're just, you know, so—!"
 
-    # show CLive2D Callie_nervous_at_reader
+    # show CLive2D Callie_nervous_at_reader - we don't have that / not in the technical script
     C "—cute! And I really, {i}really{/i} want you to like me!"
 
     $ quick_menu = False
     menu:
         "I get that, I also get nervous on first dates.":
             # show CLive2D Callie_genuine_happy -> Callie_normal
+            show CLive2D genuine_happy_start genuine_happy_normal normal
             pass
         "Don't sweat it.":
             # show CLive2D Callie_nervous -> Callie_normal
+            show CLive2D nervous_start nervous_normal normal
             pass
         "We'll see.":
             # show CLive2D Callie_panic -> Callie_too_sweet
@@ -180,11 +183,13 @@ label beginning:
     N "The waiter arrives with your food and whips the cover off to reveal glistening towers of fruit and shining caramel."
     N "The sparkling glassware gleams with condensation as they're set down before you. "
     # show CLive2D Callie_annoyed_at_narrator -> Callie_normal
+    show CLive2D annoyed_at_narrator annoyed_normal normal 
     extend "Both of you salivate at the sight."
 
     Pc "So, what do you actually like?"
 
     # show CLive2D Callie_too_sweet
+    show CLive2D too_sweet_start too_sweet_talking
     C "Oh! I like knitting!"
 
     N "Callie pulls the bag of materials from her purse."
@@ -201,6 +206,7 @@ label beginning:
     # DURING THIS TEXT BOX PLAY: Callie_surprised > Callie_nervous > Callie_too_sweet
     N "She seems to be having a rough patch. Let's get this date back on track. Why don't you ask her something?"
     # show CLive2D Callie_surprised_no_talking
+    show CLive2D surprised 
     extend " Like, say, what's her favorite thing to knit?"
     # what the balls is happening here. so many animations
     # show CLive2D Callie_nervous_ending Callie_too_sweet_beginning Callie_too_sweet__ending_basic??
@@ -210,22 +216,29 @@ label beginning:
         "What's your favorite thing to knit?":
             $ quick_menu = True
             # show CLive2D Callie_annoyed
+            show CLive2D annoyed_start annoyed_normal
             C "You—!"
             # show CLive2D Callie_too_sweet
+            show CLive2D too_sweet_start too_sweet_talking
             C "I like knitting—"
             # show CLive2D Callie_nervous
+            show CLive2D nervous_start nervous_normal too_sweet_start too_sweet_talking
             extend "flowers!{w} But enough about me! How are you liking the cafe?"
             $ quick_menu = False
             menu:
                 "I like it.":
                     $ quick_menu = True
                     # show CLive2D Callie_too_sweet
+                    show CLive2D too_sweet_start too_sweet_talking
                     C "Oh? Me too!"
+                    show CLive2D too_sweet_normal normal
                     pass
                 "It's kind of bland.":
                     $ quick_menu = True
                     # show CLive2D Callie_genuine_happy
+                    show CLive2D genuine_happy_start
                     C "Yeah, it is."
+                    show CLive2D genuine_happy_normal normal
                     pass
             $ quick_menu = False
             menu:
@@ -240,14 +253,14 @@ label beginning:
     show CLive2D sardonic_start sardonic_talking
     C "I come here {i}sooo{/i} often, I practically live here. This place is always the same every time I visit. The waiter's been here since day one, and the menu hasn't changed in ages. It's—"
 
-    show CLive2D anger_no_talking
+    show CLive2D annoyed_at_narrator
     N "A loud crash echoes from the kitchen." with vpunch
 
     # show CLive2D Callie_annoyed_at_narrator
-    show CLive2D annoyed_normal too_sweet_start too_sweet_talking
+    show CLive2D annoyed_start annoyed_normal too_sweet_start too_sweet_talking
     C "—comforting! I love this place! Best sweets in the area. Their [food] is just so flavorful!"
 
-    show CLive2D normal
+    show CLive2D too_sweet_normal normal
     N "Callie takes a BIG bite of her Poppin' Pomegranate Parfait."
 
     # show CLive2D Callie_hiding_frustration_2
@@ -266,7 +279,9 @@ label beginning:
         "It's too sweet.":
             $ quick_menu = True
             # show CLive2D Callie_genuine_happy
+            show CLive2D genuine_happy_start genuine_happy_talking
             C "Yeah, it is."
+            show CLive2D genuine_happy_normal normal
             pass
     
     return
@@ -276,8 +291,10 @@ label end:
     N "The two of you continue to chat, and after a while, you finish your meal. The waiter begins to approach your table with—"
 
     # show CLive2D Callie_hiding_frustration_1
+    show CLive2D hiding_frustration_start hiding_frustration_talking
     C "You know what? I'm actually still a little hungry! Waiter, why don't you give us the menu? I could go for another round!"
 
+    show CLive2D hiding_frustration_normal normal
     N "The waiter arrives with the check. You should pay."
 
     # show CLive2D Callie_hiding_frustration_2
@@ -295,8 +312,10 @@ label end:
     N "The waiter leaves you the checkbook with a stern look before walking away. There are others waiting for a table. It's time to pay."
 
     # show CLive2D Callie_too_sweet
+    show CLive2D too_sweet_start too_sweet_talking
     C "Waiter! Waiter! Menu—!"
 
+    show CLive2D too_sweet_normal normal
     N "The waiter continues serving other tables while waiting for you to pay. [Player], why don't you?"
     
     $ quick_menu = False
@@ -318,22 +337,27 @@ label end:
 
     $ quick_menu = True
 
+    show CLive2D nervous_start nervous_talking
     C "NO!"
+    show CLive2D nervous_normal normal too_sweet_start too_sweet_talking
     # show CLive2D Callie_too_sweet
     C "No-no-no! I'll pay for the date! Just let me order more first—!"
     
     N "{i}Callie{/i}.{w} Just.{w} Pay.{w} {b}UP{/b}."
 
     # show CLive2D Callie_angry
+    show CLive2D angry_start angry_talking
     C "No! Damn it! Why do you always have to ruin things!"
     C "This is why the devs abandoned us and why no one likes our game!"
     C "Because {i}you{/i} keep enforcing this stupid, generic plot!"
 
+    show CLive2D anger_no_talking
     N "Stupid?! Generic!? You ungrateful little {b}{i}brat!{/i}{/b}"
     
     N "Who do you think writes the plot? Puts up the options?! Moves your sorry-meandering-butt from plot point to plot point!"
 
     # show CLive2D Callie_angry
+    show CLive2D angry_talking
     C "Who do you think the players are playing this game for?!"
 
     N "For sure not {i}you{/i}."
@@ -344,6 +368,7 @@ label end:
     N "And {i}you're{/i} lucky you're the only character here, because I'd replace you in a tick!"
 
     # show CLive2D Callie_eye_roll
+    show CLive2D anger_talking_eyeroll
     C "Replace me? The devs are better off replacing {i}you!{/i}"
 
     # N "{cps=20}You {b}motherf—{/b}{nw}{/cps}"
@@ -361,7 +386,8 @@ label end:
     $ persistent.crashed = True
     # $ renpy.quit()
     # placeholder so the game would stop ending and I'd have to go through everything again
-    Pc "Huh?"
+    # Pc "Huh?"
+    $ renpy.pause(2, hard=True)
 
     return
 
