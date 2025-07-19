@@ -86,6 +86,7 @@ label beginning:
 
     menu:
         "Sure.":
+            show CLive2D normal_talking
             C "Great! Waiter! Yoohoo! Menu please!"
             jump c1
         "It's alright, I got it.":
@@ -96,15 +97,15 @@ label beginning:
 
     show CLive2D normal_talking
     C "No! I insist! Waiter! Yoohoo! Menu, please!"
-    show CLive2D normal
 
     label c1:
+    show CLive2D normal
     N "You peruse the menu and all its overly decadent offerings. This sweets cafe sure is on the pricey side. $38 for a slice of cake?! Ridiculous! Who in their right mind would order from here?!"
 
     show CLive2D normal_talking
     C "I'll have the Poppin' Pomegranate Parfait! And—oh, wait. [Player], why don't you order first? It's on my card!"
     # show CLive2D Callie_too_sweet
-    show CLive2D too_sweet_start too_sweet_normal
+    show CLive2D too_sweet_start too_sweet_normal normal
 
     $ quick_menu = False
     menu:
@@ -118,14 +119,15 @@ label beginning:
             menu:
                 "Ambrosial Delight.":
                     $ food = "Ambrosial Delight"
+                    show CLive2D normal
                 "Four Seasons Lotus Bowl.":
                     $ food = "Four Seasons Lotus Bowl"
                     # show CLive2D Callie_genuine_happy (2s)
                     show CLive2D genuine_happy_start normal
         "I'll have the Ambrosial Delight.":
             $ food = "Ambrosial Delight"
+            show CLive2D normal
     $ quick_menu = True
-    show CLive2D normal
     N "The waiter leaves after taking your orders. You have some time to yourselves. What do you want to talk about?"
     $ quick_menu = False
     menu:
@@ -158,11 +160,13 @@ label beginning:
     Pc "What do you like about [genre.lower()] games?"
 
     # show CLive2D Callie_nervous
-    show CLive2D nervous_start nervous_talking
+    show CLive2D nervous_start nervous_talking_long
     C "Oh…! I really like the—um—I'm sorry! I don't actually like [genre.lower()] games! I just didn't know what else to say! I didn't leave a good impression since I was late, but you're just, you know, so—!"
 
     # show CLive2D Callie_nervous_at_reader - we don't have that / not in the technical script
     C "—cute! And I really, {i}really{/i} want you to like me!"
+
+    show CLive2D nervous
 
     $ quick_menu = False
     menu:
@@ -320,7 +324,7 @@ label end:
     
     $ quick_menu = False
     show screen QTE(1.5, 'after2')
-    show screen butt_hover("no", vpunch)
+    # show screen butt_hover("no", vpunch)
     label repeat:
     menu:
         "Pay for the meal":
@@ -328,9 +332,9 @@ label end:
             
     label after2:
         hide screen QTE
-        hide screen butt_hover
+        # hide screen butt_hover
     pause 0.25
-    hide screen no
+    # hide screen no
 
     # try to make textbox shake
     # if getting rid of no do textbox shake
