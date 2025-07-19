@@ -1045,6 +1045,8 @@ screen extras():
             xsize 1300
 
             # input each extra here
+
+            # put them all in a grid (preferrably smaller than they look rn) and when clicked on see a bigger version.
             text _("By Kraeyola. Callie's first iteration of concepts:")
             image ("resources/Callie_concepts1.png")
 
@@ -1055,6 +1057,21 @@ screen extras():
             text _("By Kraeyola. Callie's reference sheet:")
             image ("resources/Callie_ref_sheet.png"):
                 zoom 0.13
+
+            text _("By Xetherios. Ogygia Cafe background first design:")
+            image ("resources/cafe-bg.png"):
+                zoom 0.47
+
+            text _("By Xetherios. Ogygia Cafe background frame 1:")
+            image ("resources/cafe-bg-1.png"):
+                zoom 0.47
+
+            text _("By Xetherios. Ogygia Cafe background frame 2:")
+            image ("resources/cafe-bg-2.png"):
+                zoom 0.47
+
+            # hao so theres a bunch of animations right?
+            # yeah can you put them here too pleaseeee tytyyy <3
             
 
 style extras_label is gui_label

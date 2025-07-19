@@ -315,8 +315,6 @@ label end:
     # show CLive2D Callie_eye_roll
     C "Replace me? The devs are better off replacing {i}you{/i}!"
 
-    # $ sshake = Shake((0, 0, 0, 0), 1.0, dist=15)
-
     # N "{cps=20}You {b}motherf—{/b}{nw}{/cps}"
     N "{cps=20}Y{size=+1}o{/size}{size=+2}u{/size}{size=+3} {/size}{size=+5}m{/size}{size=+7}o{/size}{size=+10}t{/size}{size=+14}h{/size}{size=+18}e{/size}{size=+23}r{/size}{size=+29}f{/size}{size=+37}—{/size}{/cps}{nw}" with Move((15, 0), (-15, 0), 0.3, bounce=True, repeat=True, delay=1)
     hide CLive2D
