@@ -42,6 +42,13 @@ label beginning:
         xalign 0.5
     with fade
 
+    show CLive2D nervous_talking_long
+    N "test test"
+    show CLive2D normal
+    N "test again"
+    show CLive2D normal_talking
+    $ renpy.pause(10, hard=True)
+
     $ quick_menu = True
     N "...{w}..."
     N "That's... odd. Callie should be here by now. It's not rush hour, and while you were texting, she didn't {i}seem{/i} like the kind of person who'd stand you up—"
@@ -54,7 +61,6 @@ label beginning:
 
     show CLive2D normal with moveinright:
         ypos 0.1
-    
 
     show CLive2D normal_talking
     $ quick_menu = True
@@ -288,6 +294,8 @@ label end:
     # if getting rid of no do textbox shake
 
     $ quick_menu = True
+
+    C "NO!"
     # show CLive2D Callie_too_sweet
     C "No-no-no! I'll pay for the date! Just let me order more first—!"
     
