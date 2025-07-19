@@ -42,12 +42,12 @@ label beginning:
         xalign 0.5
     with fade
 
-    show CLive2D nervous_talking_long
-    N "test test"
-    show CLive2D normal
-    N "test again"
-    show CLive2D normal_talking
-    $ renpy.pause(10, hard=True)
+    # show CLive2D nervous_talking_long
+    # N "test test"
+    # show CLive2D normal
+    # N "test again"
+    # show CLive2D normal_talking
+    # $ renpy.pause(10, hard=True)
 
     $ quick_menu = True
     N "...{w}..."
@@ -79,7 +79,10 @@ label beginning:
     $ quick_menu = True
 
     # show CLive2D Callie_too_Sweet
+    show CLive2D too_sweet_start too_sweet_talking
     C "Oh, really? If that's the case, why don't I cover the meal then? On the house! As an apology for being late!"
+
+    show CLive2D normal
 
     menu:
         "Sure.":
@@ -90,19 +93,26 @@ label beginning:
         "We can split.":
             pass
     $ quick_menu = True
+
+    show CLive2D normal_talking
     C "No! I insist! Waiter! Yoohoo! Menu, please!"
+    show CLive2D normal
 
     label c1:
     N "You peruse the menu and all its overly decadent offerings. This sweets cafe sure is on the pricey side. $38 for a slice of cake?! Ridiculous! Who in their right mind would order from here?!"
 
+    show CLive2D normal_talking
     C "I'll have the Poppin' Pomegranate Parfait! And—oh, wait. [Player], why don't you order first? It's on my card!"
     # show CLive2D Callie_too_sweet
+    show CLive2D too_sweet_start too_sweet_normal
 
     $ quick_menu = False
     menu:
         "Any recommendations?":
             $ quick_menu = True
+            show CLive2D normal_talking
             C "Their Four Seasons Lotus Bowl makes it {i}so{/i} worth the visit! I always stay for more."
+            show CLive2D normal
             Pc "I'll take the:"
             $ quick_menu = False
             menu:
@@ -111,6 +121,7 @@ label beginning:
                 "Four Seasons Lotus Bowl.":
                     $ food = "Four Seasons Lotus Bowl"
                     # show CLive2D Callie_genuine_happy (2s)
+                    show CLive2D genuine_happy_start normal
         "I'll have the Ambrosial Delight.":
             $ food = "Ambrosial Delight"
     $ quick_menu = True
@@ -124,9 +135,12 @@ label beginning:
             pass
     $ quick_menu = True
     # show CLive2D Callie_surprised
-    C "Me?"
+    show CLive2D surprised normal
+    C "Me? {nw=1}"
+    show CLive2D nervous_start nervous_talking_long
     # show CLive2D Callie_nervous
-    extend " I like to play video games in my free time. How about you? What do you play?"
+    extend "I like to play video games in my free time. How about you? What do you play?"
+    show CLive2D nervous_normal normal
     $ quick_menu = False
     menu:
         "Action":
@@ -137,6 +151,7 @@ label beginning:
             $ genre = "Casual"
     $ quick_menu = True
     # show CLive2D Callie_too_sweet
+    show CLive2D too_sweet_start too_sweet_talking
     C "Really?! Me too!"
 
     # first time our character has actual lines :O
@@ -175,9 +190,10 @@ label beginning:
     N "Callie pulls the bag of materials from her purse."
 
     # show CLive2D Callie_sardonic
+    show CLive2D sardonic_start sardonic_talking 
     C "I've knitted for ages, but I keep having to undo my stitches because I've got a {i}pet{/i}—"
     show CLive2D hiding_frustration_start hiding_frustration_talking
-    extend "who keeps interrupting"
+    extend "who keeps {i}interrupting{/i}"
     show CLive2D hiding_frustration_normal normal_bombastic_side_eye normal_talking
     extend "{w=2} me {w=2}when I'm so close to finishing."
     show CLive2D normal
@@ -221,17 +237,24 @@ label beginning:
             pass
     $ quick_menu = True
     # show CLive2D Callie_sardonic
+    show CLive2D sardonic_start sardonic_talking
     C "I come here {i}sooo{/i} often, I practically live here. This place is always the same every time I visit. The waiter's been here since day one, and the menu hasn't changed in ages. It's—"
 
+    show CLive2D anger_no_talking
     N "A loud crash echoes from the kitchen." with vpunch
 
     # show CLive2D Callie_annoyed_at_narrator
+    show CLive2D annoyed_normal too_sweet_start too_sweet_talking
     C "—comforting! I love this place! Best sweets in the area. Their [food] is just so flavorful!"
 
+    show CLive2D normal
     N "Callie takes a BIG bite of her Poppin' Pomegranate Parfait."
 
     # show CLive2D Callie_hiding_frustration_2
+    show CLive2D hiding_frustration_start hiding_frustration_talking
     C "Mmmm! It's {i}sooo{/i} good! How about your food, [Player]? Do you like yours?"
+
+    show CLive2D normal
 
     $ quick_menu = False
     menu:
@@ -306,7 +329,7 @@ label end:
     C "This is why the devs abandoned us and why no one likes our game!"
     C "Because {i}you{/i} keep enforcing this stupid, generic plot!"
 
-    N "Stupid?! Generic!? You ungrateful little {b}{i}brat{/i}{/b}!"
+    N "Stupid?! Generic!? You ungrateful little {b}{i}brat!{/i}{/b}"
     
     N "Who do you think writes the plot? Puts up the options?! Moves your sorry-meandering-butt from plot point to plot point!"
 
@@ -321,7 +344,7 @@ label end:
     N "And {i}you're{/i} lucky you're the only character here, because I'd replace you in a tick!"
 
     # show CLive2D Callie_eye_roll
-    C "Replace me? The devs are better off replacing {i}you{/i}!"
+    C "Replace me? The devs are better off replacing {i}you!{/i}"
 
     # N "{cps=20}You {b}motherf—{/b}{nw}{/cps}"
     N "{cps=20}Y{size=+1}o{/size}{size=+2}u{/size}{size=+3} {/size}{size=+5}m{/size}{size=+7}o{/size}{size=+10}t{/size}{size=+14}h{/size}{size=+18}e{/size}{size=+23}r{/size}{size=+29}f{/size}{size=+37}—{/size}{/cps}{nw}" with Move((15, 0), (-15, 0), 0.3, bounce=True, repeat=True, delay=1)
@@ -358,7 +381,7 @@ screen no():
         at truecenter
 
 screen ERROR():
-    text "<An exception has occured>" size 100 color "FF0000":
+    text "<An exception has occured.>" size 100 color "FF0000":
         at truecenter
 
 screen butt_hover(popup, trans):

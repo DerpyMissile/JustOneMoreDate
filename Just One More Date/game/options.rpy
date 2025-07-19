@@ -31,6 +31,8 @@ define config.version = "1.0"
 
 define gui.about = _p("""
 This game is aboutttt?
+
+This game was made for the O2A2 VN Jam 2025, a micro Visual Novel jam with strict asset limitations and a 1000 word limit. 
 """)
 
 
@@ -38,7 +40,7 @@ This game is aboutttt?
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "springcalls"
+define build.name = "Dating_is_Sooo_hard"
 
 
 ## Sounds and music ############################################################
@@ -144,7 +146,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "springcalls-1738580568"
+define config.save_directory = "dating_is_sooo_hard"
 
 
 ## Icon ########################################################################
