@@ -154,7 +154,7 @@ style namebox:
     
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
-    padding gui.namebox_borders.padding
+    padding gui.namebox_borders.padding 
 
 style say_label:
     properties gui.text_properties("name", accent=True)
@@ -384,6 +384,9 @@ screen main_menu():
     ## contents of the main menu are in the navigation screen.
     use navigation
 
+    ## add logo
+    add "resources/datingissooohard-logo.png" xalign 0.95 yalign 0.05
+
     if gui.show_name:
 
         vbox:
@@ -406,7 +409,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    background "resources/cafe-bg-1.png"
 
 style main_menu_vbox:
     xmaximum 1200 
