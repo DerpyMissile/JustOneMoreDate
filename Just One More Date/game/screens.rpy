@@ -335,6 +335,10 @@ screen navigation():
 
         textbutton _("About") action ShowMenu("about")
 
+# added in here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        if persistent.crashed:
+            textbutton _("Extras") action ShowMenu("extras")
+
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
@@ -1018,6 +1022,64 @@ style history_label:
 style history_label_text:
     xalign 0.5
 
+## Extras screen ################################################################
+##
+## This screen gives credit and copyright information about the game and Ren'Py.
+##
+## There's nothing special about this screen, and hence it also serves as an
+## example of how to make a custom screen.
+
+screen extras():
+
+    tag menu
+
+    ## This use statement includes the game_menu screen inside this one. The
+    ## vbox child is then included inside the viewport inside the game_menu
+    ## screen.
+    use game_menu(_("Extras"), scroll="viewport"):
+
+        style_prefix "extras"
+
+        vbox:
+            xoffset 100
+            xsize 1300
+
+            # input each extra here
+
+            # put them all in a grid (preferrably smaller than they look rn) and when clicked on see a bigger version.
+            text _("By Kraeyola. Callie's first iteration of concepts:")
+            image ("resources/Callie_concepts1.png")
+
+            text _("By Kraeyola. Callie's second iteration of concepts:")
+            image ("resources/Callie_concepts2.png"):
+                zoom 0.35
+
+            text _("By Kraeyola. Callie's reference sheet:")
+            image ("resources/Callie_ref_sheet.png"):
+                zoom 0.13
+
+            text _("By Xetherios. Ogygia Cafe background first design:")
+            image ("resources/cafe-bg.png"):
+                zoom 0.47
+
+            text _("By Xetherios. Ogygia Cafe background frame 1:")
+            image ("resources/cafe-bg-1.png"):
+                zoom 0.47
+
+            text _("By Xetherios. Ogygia Cafe background frame 2:")
+            image ("resources/cafe-bg-2.png"):
+                zoom 0.47
+
+            # hao so theres a bunch of animations right?
+            # yeah can you put them here too pleaseeee tytyyy <3
+            
+
+style extras_label is gui_label
+style extras_label_text is gui_label_text
+style extras_text is gui_text
+
+style extras_label_text:
+    size gui.label_text_size
 
 ## Help screen #################################################################
 ##
