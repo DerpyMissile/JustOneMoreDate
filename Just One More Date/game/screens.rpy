@@ -1069,14 +1069,6 @@ screen extras():
             image ("resources/cafe-bg.png"):
                 zoom 0.47
 
-            text _("By Xetherios. Ogygia Cafe background frame 1:")
-            image ("resources/cafe-bg-1.png"):
-                zoom 0.47
-
-            text _("By Xetherios. Ogygia Cafe background frame 2:")
-            image ("resources/cafe-bg-2.png"):
-                zoom 0.47
-
             # hao so theres a bunch of animations right?
             # yeah can you put them here too pleaseeee tytyyy <3
             
