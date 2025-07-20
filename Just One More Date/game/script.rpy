@@ -278,6 +278,7 @@ label beginning:
         "It's really sweet.":
             $ quick_menu = True
             # show CLive2D Callie_eye_roll
+            show CLive2D normal_eyeroll_talking
             C "Yeah, it's {i}really{/i} sweet."
             pass
         "It's too sweet.":

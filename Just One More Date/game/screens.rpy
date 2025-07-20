@@ -379,6 +379,10 @@ screen main_menu():
     ## This empty frame darkens the main menu.
     frame:
         style "main_menu_frame"
+        # if renpy.pause(0.5, tight=True):
+        #     pass
+        # style "main_menu_frame_2"
+        # repeat True
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
@@ -409,7 +413,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "resources/cafe-bg-1.png"
+    # background "resources/cafe-bg-1.png"
 
 style main_menu_vbox:
     xmaximum 1200 
@@ -1063,14 +1067,6 @@ screen extras():
 
             text _("By Xetherios. Ogygia Cafe background first design:")
             image ("resources/cafe-bg.png"):
-                zoom 0.47
-
-            text _("By Xetherios. Ogygia Cafe background frame 1:")
-            image ("resources/cafe-bg-1.png"):
-                zoom 0.47
-
-            text _("By Xetherios. Ogygia Cafe background frame 2:")
-            image ("resources/cafe-bg-2.png"):
                 zoom 0.47
 
             # hao so theres a bunch of animations right?
