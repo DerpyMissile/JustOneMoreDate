@@ -157,6 +157,7 @@ label beginning:
     C "Really?! Me too!"
 
     # first time our character has actual lines :O
+    show CLive2D too_sweet_normal normal
     Pc "What do you like about [genre.lower()] games?"
 
     # show CLive2D Callie_nervous
@@ -180,6 +181,8 @@ label beginning:
             pass
         "We'll see.":
             # show CLive2D Callie_panic -> Callie_too_sweet
+            show CLive2D nervous_start nervous_normal too_sweet_start too_sweet_normal normal
+            pause 2
             pass
     pause 2
     $ quick_menu = True
@@ -196,6 +199,8 @@ label beginning:
     show CLive2D too_sweet_start too_sweet_talking
     C "Oh! I like knitting!"
 
+    show CLive2D too_sweet_normal normal
+
     N "Callie pulls the bag of materials from her purse."
 
     # show CLive2D Callie_sardonic
@@ -210,17 +215,17 @@ label beginning:
     # DURING THIS TEXT BOX PLAY: Callie_surprised > Callie_nervous > Callie_too_sweet
     N "She seems to be having a rough patch. Let's get this date back on track. Why don't you ask her something?"
     # show CLive2D Callie_surprised_no_talking
-    show CLive2D surprised 
+    show CLive2D surprised nervous_start nervous
     extend " Like, say, what's her favorite thing to knit?"
     # what the balls is happening here. so many animations
     # show CLive2D Callie_nervous_ending Callie_too_sweet_beginning Callie_too_sweet__ending_basic??
-
+    show CLive2D too_sweet_start too_sweet_normal normal
     $ quick_menu = False
     menu:
         "What's your favorite thing to knit?":
             $ quick_menu = True
             # show CLive2D Callie_annoyed
-            show CLive2D annoyed_start annoyed_normal
+            show CLive2D annoyed_start annoyed_normal normal
             C "You—!"
             # show CLive2D Callie_too_sweet
             show CLive2D too_sweet_start too_sweet_talking
@@ -240,7 +245,7 @@ label beginning:
                 "It's kind of bland.":
                     $ quick_menu = True
                     # show CLive2D Callie_genuine_happy
-                    show CLive2D genuine_happy_start
+                    show CLive2D genuine_happy_start genuine_happy_talking
                     C "Yeah, it is."
                     show CLive2D genuine_happy_normal normal
                     pass
@@ -280,6 +285,7 @@ label beginning:
             # show CLive2D Callie_eye_roll
             show CLive2D normal_eyeroll_talking
             C "Yeah, it's {i}really{/i} sweet."
+            show CLive2D normal
             pass
         "It's too sweet.":
             $ quick_menu = True
@@ -348,10 +354,12 @@ label end:
     # show CLive2D Callie_too_sweet
     C "No-no-no! I'll pay for the date! Just let me order more first—!"
     
+    show CLive2D too_sweet_normal normal
+
     N "{i}Callie{/i}.{w} Just.{w} Pay.{w} {b}UP{/b}."
 
     # show CLive2D Callie_angry
-    show CLive2D angry_start angry_talking
+    show CLive2D angry_start anger_talking
     C "No! Damn it! Why do you always have to ruin things!"
     C "This is why the devs abandoned us and why no one likes our game!"
     C "Because {i}you{/i} keep enforcing this stupid, generic plot!"
@@ -362,7 +370,7 @@ label end:
     N "Who do you think writes the plot? Puts up the options?! Moves your sorry-meandering-butt from plot point to plot point!"
 
     # show CLive2D Callie_angry
-    show CLive2D angry_talking
+    show CLive2D angry_start anger_talking
     C "Who do you think the players are playing this game for?!"
 
     N "For sure not {i}you{/i}."
