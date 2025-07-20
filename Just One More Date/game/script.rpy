@@ -6,6 +6,7 @@ image bgframe1 = "resources/cafe-bg-1.png"
 image bgframe2 = "resources/cafe-bg-2.png"
 define lookaround = Move((0, 0), (-65, 0), 2, bounce=True, repeat=True, delay=2)
 default persistent.crashed = False
+default shake_textbox = False
 
 init:
     $ counter = 0
@@ -352,14 +353,29 @@ label end:
     $ quick_menu = True
 
     show CLive2D nervous_start nervous_talking
+    $ shake_textbox = True
     C "NO!"
+    $ shake_textbox = False
     show CLive2D nervous_normal normal too_sweet_start too_sweet_talking
     # show CLive2D Callie_too_sweet
     C "No-no-no! I'll pay for the date! Just let me order more first—!"
     
     show CLive2D too_sweet_normal normal
 
-    N "{i}Callie{/i}.{w} Just.{w} Pay.{w} {b}UP{/b}."
+    $ shake_textbox = True
+    hide screen quick_menu
+    show screen quick_menu
+    N "{i}Callie{/i}."
+    hide screen quick_menu
+    show screen quick_menu
+    N "{i}Callie{/i}.{fast} Just."
+    hide screen quick_menu
+    show screen quick_menu
+    N "{i}Callie{/i}. Just.{fast} Pay."
+    hide screen quick_menu
+    show screen quick_menu
+    N "{i}Callie{/i}. Just. Pay.{fast} {b}UP{/b}."
+    $ shake_textbox = False
 
     # show CLive2D Callie_angry
     show CLive2D angry_start anger_talking

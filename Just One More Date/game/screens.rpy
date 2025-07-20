@@ -99,21 +99,35 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
+transform textbox_shake:
+    linear 0.05 xoffset -10
+    pause 0.05
+    linear 0.05 xoffset 10
+    repeat 4
+
 screen say(who, what):
 
-    window:
-        id "window"
-        # at transform:
-        #     alpha 0.75
-        if who is not None:
+    if shake_textbox:
+        window:
+            id "window"
+            at textbox_shake
+            if who is not None:
 
-            window:
-                id "namebox"
-                style "namebox"
-                text who id "who"
-                # at transform:
-                #     alpha 0.75
-        text what id "what"
+                window:
+                    id "namebox"
+                    style "namebox"
+                    text who id "who"
+            text what id "what"
+    else:
+        window:
+            id "window"
+            if who is not None:
+
+                window:
+                    id "namebox"
+                    style "namebox"
+                    text who id "who"
+            text what id "what"
 
 
     ## If there's a side image, display it above the text. Do not display on the
@@ -257,21 +271,37 @@ screen quick_menu():
     zorder 100
 
     if quick_menu and not renpy.get_screen('choice'):
+        
+            if shake_textbox:
+                fixed:
+                    at textbox_shake
+                    vbox:
+                        style_prefix "quick"
 
-        vbox:
-            style_prefix "quick"
+                        xpos 1565
+                        ypos 830
 
-            xalign 0.5
-            yalign 1.0
-            yoffset -34
-            xoffset 645
+                        textbutton _("Back") action Rollback()
+                        textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+                        textbutton _("Auto") action Preference("auto-forward", "toggle")
+                        textbutton _("Save") action ShowMenu('save')
+                        textbutton _("Load") action ShowMenu('load')
+                        textbutton _("Prefs") action ShowMenu('preferences')
+            else:
+                vbox:
+                    style_prefix "quick"
 
-            textbutton _("Back") action Rollback()
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Load") action ShowMenu('load')
-            textbutton _("Prefs") action ShowMenu('preferences')
+                    xalign 0.5
+                    yalign 1.0
+                    yoffset -34
+                    xoffset 645
+
+                    textbutton _("Back") action Rollback()
+                    textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+                    textbutton _("Auto") action Preference("auto-forward", "toggle")
+                    textbutton _("Save") action ShowMenu('save')
+                    textbutton _("Load") action ShowMenu('load')
+                    textbutton _("Prefs") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
