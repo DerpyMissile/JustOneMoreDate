@@ -1091,7 +1091,7 @@ screen extras():
             image ("resources/Callie_concepts2.png"):
                 zoom 0.35
 
-            text _("By Kraeyola. Callie's reference sheet:")
+            text _("By Kraeyola. Callie's final design reference sheet:")
             image ("resources/Callie_ref_sheet.png"):
                 zoom 0.13
 
@@ -1099,8 +1099,6 @@ screen extras():
             image ("resources/cafe-bg.png"):
                 zoom 0.47
 
-            # hao so theres a bunch of animations right?
-            # yeah can you put them here too pleaseeee tytyyy <3
             
 
 style extras_label is gui_label

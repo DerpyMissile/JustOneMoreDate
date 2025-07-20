@@ -23,14 +23,27 @@ define gui.show_name = False
 
 ## The version of the game.
 
-define config.version = "1.0"
+# little easter egg in the version number for us
+define config.version = "0.74 Experimental Alpha"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
-This game is aboutttt?
+Credits:
+
+#g1 -> writing?, code?
+
+Kraeyola -> Creative lead, Character model art
+
+#g2 -> writing?, Live2D animations, VA
+
+Xetherios -> Creative advisor, Background/Logo art
+
+Silaith -> Creative advisor
+
+Purghaps -> code
 
 This game was made for the O2A2 VN Jam 2025, a micro Visual Novel jam with strict asset limitations and a 1000 word limit. 
 """)

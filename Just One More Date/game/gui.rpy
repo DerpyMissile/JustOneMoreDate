@@ -87,16 +87,17 @@ define gui.title_text_size = 75
 
 ## Main and Game Menus #########################################################
 
+# add a little easter egg where if you hover over the dating is so hard image in the main menu, callie pops up
+# so it looks like callie is saying it
+# actually nvm just incase its not allowed imma not put it in
+
 ## The images used for the main and game menus.
 image main_menu_animated:
-    "resources/cafe-bg-2.png" with dissolve
-    linear 1 alpha 1.0
     "resources/cafe-bg-1.png" with dissolve
-    linear 1 alpha 1.0
+    zoom 0.8 ypos -0.05 xalign 0.5
     pause 1.0
-    linear 1 alpha 1.0
     "resources/cafe-bg-2.png" with dissolve
-    linear 1 alpha 1.0
+    zoom 0.8 ypos -0.05 xalign 0.5
     pause 1.0
     repeat
 define gui.main_menu_background = "main_menu_animated"
