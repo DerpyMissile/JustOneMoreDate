@@ -1,4 +1,4 @@
-﻿define C = Character("Callie", color = "#893727") # what color for Callie's name?
+﻿define C = Character("Callie", color = "#D02F3C") # what color for Callie's name?
 define N = Character("Narrator", namebox_xalign = 0.60) # what color for narrator's name?
 define Pc = Character("[Player]") # what color for player's name?
 image CLive2D = Live2D("resources/Callie", default_fade=0.0, loop=True)

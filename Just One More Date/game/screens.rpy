@@ -243,7 +243,7 @@ style choice_button is default:
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
-    hover_color "#c67775"
+    hover_color "#265757"
 
 
 ## Quick Menu screen ###########################################################
@@ -289,7 +289,7 @@ style quick_button:
 
 style quick_button_text:
     properties gui.text_properties("quick_button")
-    hover_color "#c67775"
+    hover_color "#D02F3C"
 
 
 ################################################################################
@@ -756,15 +756,15 @@ style page_button:
 
 style page_button_text:
     properties gui.text_properties("page_button")
-    hover_color "#c67775"
-    selected_color "#f4bab9"
+    hover_color "#FFFFFF"
+    selected_color "#D02F3C"
 
 style slot_button:
     properties gui.button_properties("slot_button")
 
 style slot_button_text:
     properties gui.text_properties("slot_button")
-    hover_color "#c67775"
+    hover_color "#FFFFFF"
 
 
 
@@ -904,8 +904,8 @@ style radio_button:
 
 style radio_button_text:
     properties gui.text_properties("radio_button")
-    selected_color "#c67775"
-    hover_color "#f4bab9"
+    selected_color "#FFFFFF"
+    hover_color "#D02F3C"
 
 style check_vbox:
     spacing gui.pref_button_spacing
@@ -916,8 +916,8 @@ style check_button:
 
 style check_button_text:
     properties gui.text_properties("check_button")
-    selected_color "#c67775"
-    hover_color "#f4bab9"
+    selected_color "#FFFFFF"
+    hover_color "#D02F3C"
 
 style slider_slider:
     xsize 540
@@ -1235,8 +1235,8 @@ style help_button:
 
 style help_button_text:
     properties gui.text_properties("help_button")
-    selected_color "#c67775"
-    hover_color "#f4bab9"
+    selected_color "#FFFFFF"
+    hover_color "#D02F3C"
 
 style help_label:
     xsize 375

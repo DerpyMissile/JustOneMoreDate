@@ -25,21 +25,21 @@ define config.check_conflicting_properties = True
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#5b744a'
+define gui.accent_color = '#265757'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#37512a'
+define gui.idle_color = '#265757'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#5b744a'
+define gui.idle_small_color = '#447F7A'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#fadcda'
+define gui.hover_color = '#D02F3C'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = '#fadcda'
+define gui.selected_color = '#D02F3C'
 
 ## The color used for a text button when it cannot be selected.
 define gui.insensitive_color = '#7070707f'
@@ -200,8 +200,8 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## navigation button.
 
 # define gui.navigation_button_width = 250
-define gui.navigation_button_text_selected_outlines = [ (absolute(2), "#c67775", absolute(0), absolute(0)) ]
-define gui.navigation_button_text_hover_outlines = [ (absolute(2), "#c67775", absolute(0), absolute(0)) ]
+define gui.navigation_button_text_selected_outlines = [ (absolute(2), "#FFFFFF", absolute(0), absolute(0)) ]
+define gui.navigation_button_text_hover_outlines = [ (absolute(2), "#FFFFFF", absolute(0), absolute(0)) ]
 
 
 ## Choice Buttons ##############################################################
@@ -216,7 +216,7 @@ define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = '#707070'
-define gui.choice_button_text_hover_color = "#5b744a"
+define gui.choice_button_text_hover_color = "#447F7A"
 define gui.choice_button_text_insensitive_color = '#7070707f'
 
 
