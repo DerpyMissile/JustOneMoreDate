@@ -233,6 +233,7 @@ label beginning:
             # show CLive2D Callie_nervous
             show CLive2D nervous_start nervous_normal too_sweet_start too_sweet_talking
             extend "flowers!{w} But enough about me! How are you liking the cafe?"
+            show CLive2D too_sweet_normal normal
             $ quick_menu = False
             menu:
                 "I like it.":
@@ -276,7 +277,7 @@ label beginning:
     show CLive2D hiding_frustration_start hiding_frustration_talking
     C "Mmmm! It's {i}sooo{/i} good! How about your food, [Player]? Do you like yours?"
 
-    show CLive2D normal
+    show CLive2D hiding_frustration_normal normal
 
     $ quick_menu = False
     menu:
@@ -309,8 +310,10 @@ label end:
     N "The waiter arrives with the check. You should pay."
 
     # show CLive2D Callie_hiding_frustration_2
+    show CLive2D hiding_frustration_start hiding_frustration_talking
     C "Waiter, I asked for the menu? Come on, [Player], you want to go for another round, don't you?"
 
+    show CLive2D hiding_frustration_normal normal
     show screen QTE(0.5, 'after1')
     menu:
         "Yes":
@@ -373,15 +376,18 @@ label end:
     show CLive2D angry_start anger_talking
     C "Who do you think the players are playing this game for?!"
 
+    show CLive2D anger_no_talking
     N "For sure not {i}you{/i}."
 
     # show CLive2D Callie_angry_eye_twitch
+    show CLive2D anger_talking
     C "You are {size=+10}{i}sooo{/i}{/size} lucky you're just some dumb!{w} Unessential!{w} Exposition-dumping voice!{w} Because if {i}you{/i} were a character, I'd strangle you to death!"
 
+    show CLive2D anger_no_talking
     N "And {i}you're{/i} lucky you're the only character here, because I'd replace you in a tick!"
 
     # show CLive2D Callie_eye_roll
-    show CLive2D anger_talking_eyeroll
+    show CLive2D anger_talking_eyeroll anger_talking
     C "Replace me? The devs are better off replacing {i}you!{/i}"
 
     # N "{cps=20}You {b}motherf—{/b}{nw}{/cps}"
@@ -397,6 +403,7 @@ label end:
     # unlock extras menu here for next open
     # don't forget to uncomment this in final thingy
     $ persistent.crashed = True
+    $ quick_menu = False
     # $ renpy.quit()
     # placeholder so the game would stop ending and I'd have to go through everything again
     # Pc "Huh?"
