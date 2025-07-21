@@ -30,6 +30,7 @@ image bg_ERROR:
     repeat
 
 label start:
+    play music "audio/Einspanner.mp3" volume 0.025
     # getting player name
     N "What is your name?"
     $ Player = renpy.input("Enter your name:", length=32)
@@ -53,8 +54,6 @@ label beginning:
         zoom 0.8 ypos -0.05
         xalign 0.5
     with lookaround
-
-    play music "audio/Einspanner.mp3" volume 0.025
 
     show CLive2D normal with moveinright:
         ypos 0.1
@@ -284,6 +283,7 @@ label beginning:
                     show CLive2D genuine_happy_normal normal
                     pass
             $ quick_menu = False
+            stop sound
             menu:
                 "Do you come here often?":
                     pass

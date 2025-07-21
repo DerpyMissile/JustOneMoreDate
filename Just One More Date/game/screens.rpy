@@ -363,7 +363,7 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        textbutton _("Credits") action ShowMenu("credits")
 
 # added in here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         if persistent.crashed:
@@ -609,23 +609,23 @@ style return_button:
 
 
 
-## About screen ################################################################
+## Credits screen ################################################################
 ##
 ## This screen gives credit and copyright information about the game and Ren'Py.
 ##
 ## There's nothing special about this screen, and hence it also serves as an
 ## example of how to make a custom screen.
 
-screen about():
+screen credits():
 
     tag menu
 
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    use game_menu(_("Credits"), scroll="viewport"):
 
-        style_prefix "about"
+        style_prefix "credits"
 
         vbox:
             xoffset 100
@@ -634,18 +634,18 @@ screen about():
             label "[config.name!t]"
             text _("Version [config.version!t]\n")
 
-            ## gui.about is usually set in options.rpy.
-            if gui.about:
-                text "[gui.about!t]\n"
+            ## gui.credits is usually set in options.rpy.
+            if gui.credits:
+                text "[gui.credits!t]\n"
 
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
-style about_label is gui_label
-style about_label_text is gui_label_text
-style about_text is gui_text
+style credits_label is gui_label
+style credits_label_text is gui_label_text
+style credits_text is gui_text
 
-style about_label_text:
+style credits_label_text:
     size gui.label_text_size
 
 
@@ -798,7 +798,7 @@ style slot_button:
 
 style slot_button_text:
     properties gui.text_properties("slot_button")
-    hover_color "#FFFFFF"
+    hover_color "#D02F3C"
 
 
 
@@ -938,7 +938,7 @@ style radio_button:
 
 style radio_button_text:
     properties gui.text_properties("radio_button")
-    selected_color "#FFFFFF"
+    selected_color "#D02F3C"
     hover_color "#D02F3C"
 
 style check_vbox:
@@ -950,7 +950,7 @@ style check_button:
 
 style check_button_text:
     properties gui.text_properties("check_button")
-    selected_color "#FFFFFF"
+    selected_color "#D02F3C"
     hover_color "#D02F3C"
 
 style slider_slider:

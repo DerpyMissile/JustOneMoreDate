@@ -27,25 +27,25 @@ define gui.show_name = False
 define config.version = "0.74 Experimental Alpha"
 
 
-## Text that is placed on the game's about screen. Place the text between the
+## Text that is placed on the game's credits screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
-Credits:
+define gui.credits = _p("""
+{a="https://linktr.ee/kraeyola"}Kraeyola{/a} -> Creative lead, Character model art
+
+{a="https://xetherios.carrd.co/"}Xetherios{/a} -> Creative advisor, Background/Logo art
 
 derpymissile -> Creative advisor, Programmer
 
-Kraeyola -> Creative lead, Character model art
-
-Mathbot108 -> Creative advisor, Live2D animations, VA
-
-Xetherios -> Creative advisor, Background/Logo art
+Mathbot108 -> Live2D animations, VA
 
 Silaith -> Creative advisor
 
-Purghaps -> Programmer
+{a="https://www.youtube.com/watch?v=dQw4w9WgXcQ"}Purghaps{/a} -> Programmer
 
-Assets:
+
+
+{size=+30}{u}Assets:{/u}{/size}
 
 GUI: Spring Calls by reo
 
@@ -53,6 +53,9 @@ BGM: Einspanner by Crep (DOVA-SYNDROME)
 
 This game was made for the O2A2 VN Jam 2025, a micro Visual Novel jam with strict asset limitations and a 1000 word limit. 
 """)
+
+# you should watch that video above if you haven't already
+# perhaps you'll like it
 
 
 ## A short name for the game used for executables and directories in the built
