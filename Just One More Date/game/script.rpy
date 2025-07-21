@@ -54,6 +54,8 @@ label beginning:
         xalign 0.5
     with lookaround
 
+    play music "audio/Einspanner.mp3" volume 0.025
+
     show CLive2D normal with moveinright:
         ypos 0.1
 
@@ -520,7 +522,7 @@ screen no():
         at truecenter
 
 screen ERROR():
-    text "<An exception has occured>" size 100 color "FF0000":
+    text "<An exception has occured>" size 100 color "FF0000" outlines [ (absolute(4), "#000000", absolute(0), absolute(0)) ]:
         at truecenter
 
 screen butt_hover(popup, trans):
