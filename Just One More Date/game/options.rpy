@@ -35,7 +35,7 @@ define gui.credits = _p("""
 
 {a="https://xetherios.carrd.co/"}Xetherios{/a} -> Creative advisor, Background/Logo art
 
-derpymissile -> Creative advisor, Programmer
+{a="https://pxlfiyafox.itch.io/"}derpymissile{/a} -> Creative advisor, Programmer
 
 Mathbot108 -> Live2D animations, VA
 
@@ -63,6 +63,7 @@ This game was made for the O2A2 VN Jam 2025, a micro Visual Novel jam with stric
 ## or semicolons.
 
 define build.name = "Dating_Is_Sooo_Hard"
+define build.directory_name = "Dating_Is_Sooo_Hard"
 
 
 ## Sounds and music ############################################################
@@ -168,7 +169,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "dating_is_sooo_hard"
+define config.save_directory = "Dating_Is_Sooo_Hard"
 
 
 ## Icon ########################################################################

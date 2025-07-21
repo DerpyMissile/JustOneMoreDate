@@ -35,9 +35,9 @@ label start:
     N "What is your name?"
     $ Player = renpy.input("Enter your name:", length=32)
     $ quick_menu = False
-    call beginning
-    call end
-    call ERROR_end
+    call beginning from _call_beginning
+    call end from _call_end
+    call ERROR_end from _call_ERROR_end
     return
 
 label beginning:
