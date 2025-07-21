@@ -35,7 +35,7 @@ define gui.credits = _p("""
 
 {a="https://xetherios.carrd.co/"}Xetherios{/a} -> Creative advisor, Background/Logo art
 
-derpymissile -> Creative advisor, Programmer
+{a="https://pxlfiyafox.itch.io/"}derpymissile{/a} -> Creative advisor, Programmer
 
 Mathbot108 -> Live2D animations, VA
 
