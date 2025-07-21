@@ -300,7 +300,7 @@ label beginning:
     play sound "C13p2.wav" noloop
     C "{cps=30}{w=2}The waiter's been here since day one, and the menu hasn't changed in ages. It's—"
 
-    show CLive2D annoyed_at_narrator
+    show CLive2D annoyed_at_narrator_no_talking
     stop sound
     N "A loud crash echoes from the kitchen." with vpunch
 

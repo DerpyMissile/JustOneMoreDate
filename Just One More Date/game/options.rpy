@@ -33,17 +33,17 @@ define config.version = "0.74 Experimental Alpha"
 define gui.about = _p("""
 Credits:
 
-#g1 -> writing?, code?
+derpymissile -> Creative advisor, Programmer
 
 Kraeyola -> Creative lead, Character model art
 
-#g2 -> writing?, Live2D animations, VA
+Mathbot108 -> Creative advisor, Live2D animations, VA
 
 Xetherios -> Creative advisor, Background/Logo art
 
 Silaith -> Creative advisor
 
-Purghaps -> code
+Purghaps -> Programmer
 
 This game was made for the O2A2 VN Jam 2025, a micro Visual Novel jam with strict asset limitations and a 1000 word limit. 
 """)
