@@ -45,6 +45,12 @@ Silaith -> Creative advisor
 
 Purghaps -> code
 
+Assets:
+
+GUI: Spring Calls by reo
+
+BGM: Einspanner by Crep (DOVA-SYNDROME)
+
 This game was made for the O2A2 VN Jam 2025, a micro Visual Novel jam with strict asset limitations and a 1000 word limit. 
 """)
 
